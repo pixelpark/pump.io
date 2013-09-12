@@ -1,3 +1,19 @@
 body{
-    background-color: #002a80;
+    background-color: #FFFFFF;
+}
+.btn{
+    text-transform: capitalize;
+    padding: 14px 22px;
+    background: #ff0066;
+    text-shadow: none;
+    color:#ffffff;
+    border: none;
+    box-shadow:none;
+}
+.btn-small {
+    font-size: 20px;
+}
+.btn:hover, .btn:focus, .btn:active, .btn.active, .btn.disabled, .btn[disabled] {
+    background: #bf004d;
+    color:#ffffff;
 }
