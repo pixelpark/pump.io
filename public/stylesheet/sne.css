@@ -1,55 +1,93 @@
-body{
-    background-color: #d9d9d9;
+body {
+    background-image: url("../img/grain_white.jpg");
+    /*background-color: #d9d9d9;*/
     line-height: 10px;
-    font-family: 'Bubbler One', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-shadow: none;
 }
-.btn{
+.hero-unit {
+    background-color: inherit;
+}
+
+.btn {
     text-transform: uppercase;
     padding: 14px 22px;
     background: #97bf00;
     text-shadow: none;
-    color:#ffffff;
+    color: #ffffff;
     font-weight: bold;
     border: none;
-    box-shadow:none;
+    box-shadow: none;
 
 }
+
 .btn-small {
-    font-size: 20px;
+    font-size: 30px;
 }
+
 .btn:hover, .btn:focus, .btn:active, .btn.active, .btn.disabled, .btn[disabled] {
     background: #718f00;
-    color:#ffffff;
+    color: #ffffff;
 }
+
 a, a:hover, a:focus {
     color: #0099ff;
+    text-shadow: none;
 }
-legend{
-    color:#0099ff;
+
+legend {
+    color: #0099ff;
     text-transform: uppercase;
     text-align: center;
+    font-size: 34px;
+    font-weight: bold;
 }
-.navbar-inverse .navbar-inner{
+
+.navbar-inverse .navbar-inner {
     background-color: #ff0066;
     background-image: none;
     background: #ff0066;
 
 }
-.navbar-inner{
+
+.navbar-inner {
     min-height: 10px;
 }
 
-form{
+.navbar-inverse .nav > li > a, .navbar-inverse .nav > li > a:focus, .navbar-inverse .nav > li > a:hover, .navbar-inverse .nav-collapse .nav > li > a {
+    text-shadow: none;
+    color: white;
+}
+.navbar-inverse .nav-collapse .nav > li > a, .navbar-inverse .nav-collapse .dropdown-menu a {
 
-    margin:0 auto;
 }
-.form-horizontal .control-group{
-    margin:0 auto;
+
+form {
+
+    margin: 0 auto;
 }
-.navbar .btn-navbar{
+
+.form-horizontal .control-label {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.form-horizontal .control-group {
+    margin: 0 auto;
+}
+
+.navbar .btn-navbar {
     /*visibility: hidden;*/
 }
+
 select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
-    border-radius: 8px 8px 8px 8px;
-    font-size: 20px;
+    border-radius: 10px 10px 10px 10px;
+    font-size: 30px;
+    height: 39px;
+    margin-bottom: 10px;
+}
+
+.nav > li > a {
+    display: inline;
 }

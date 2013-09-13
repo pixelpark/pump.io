@@ -28,7 +28,7 @@
     <!-- Finally, our own override sheet -->
 
     <link href="/stylesheet/pumpio.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Bubbler+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
     <link href="/stylesheet/sne.css" rel="stylesheet">
 
 

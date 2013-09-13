@@ -6,8 +6,6 @@
     <span class="icon-bar"></span>
   </a>
 
-  <a class="brand" href="/"><%- config.site %></a>
-
   <ul class="nav pull-right">
     <li id="fat-menu" class="dropdown">
       <a href="#" id="profile-dropdown" role="button" class="dropdown-toggle" data-toggle="dropdown"> 

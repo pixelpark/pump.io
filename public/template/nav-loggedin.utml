@@ -1,7 +1,5 @@
 <div class="container">
 
-  <a class="brand" href="/"><%- config.site %></a>
-
   <div class="btn-group">
     <button type="button" class="btn btn-small primary" id="post-note-button" title="Post a note">
       <span class="hidden-phone">Note </span><i class="icon-pencil"></i>
