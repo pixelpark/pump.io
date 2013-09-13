@@ -65,7 +65,7 @@
         <p><b><%- config.site %></b> brought to you by <% if (config.ownerURL) { %><a href="<%- config.ownerURL %>"><% } %><%- config.owner %><% if (config.ownerURL) { %></a><% } %>.</p>
         <% } %>
         <p><a href="http://pump.io/">pump.io</a> available under the Apache License 2.0.</p>
-      </footer>
+        <p><a href="https://github.com/wearefractal/holla/">Holla</a> available under the MIT License.</p>      </footer>
 
     </div> <!-- .container -->
 
