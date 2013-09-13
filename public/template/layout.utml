@@ -28,6 +28,7 @@
     <!-- Finally, our own override sheet -->
 
     <link href="/stylesheet/pumpio.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Bubbler+One' rel='stylesheet' type='text/css'>
     <link href="/stylesheet/sne.css" rel="stylesheet">
 
 
@@ -65,7 +66,7 @@
         <p><b><%- config.site %></b> brought to you by <% if (config.ownerURL) { %><a href="<%- config.ownerURL %>"><% } %><%- config.owner %><% if (config.ownerURL) { %></a><% } %>.</p>
         <% } %>
         <p><a href="http://pump.io/">pump.io</a> available under the Apache License 2.0.</p>
-        <p><a href="https://github.com/wearefractal/holla/">Holla</a> available under the MIT License.</p>      </footer>
+      </footer>
 
     </div> <!-- .container -->
 

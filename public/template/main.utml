@@ -7,7 +7,9 @@
 
         <h1><%- config.site %></h1>
 
-        <p>This site is an implementation of the Social Network Enabler. It is powered by a mash-up of several web services, including <a href="http://pump.io/">pump.io</a> and <a href="https://github.com/wearefractal/holla">WebRTC based video chat</a>.</p>
+        <p>This site runs <a href="http://pump.io/">pump.io</a>, the
+	  high-performance Open Source social engine. It pumps your life
+	  in and out of your friends, family and colleagues.</p>
 
         <% if (config.disableRegistration) { %>
 
@@ -21,9 +23,7 @@
 
       </div>
 
-      <div class="span4">
-        <img src="images/somefriends.jpg" width="340" height="235" class="img-rounded" />
-      </div>
+
 
     </div>
     

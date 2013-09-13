@@ -1,19 +1,55 @@
 body{
-    background-color: #FFFFFF;
+    background-color: #d9d9d9;
+    line-height: 10px;
+    font-family: 'Bubbler One', sans-serif;
 }
 .btn{
-    text-transform: capitalize;
+    text-transform: uppercase;
     padding: 14px 22px;
-    background: #ff0066;
+    background: #97bf00;
     text-shadow: none;
     color:#ffffff;
+    font-weight: bold;
     border: none;
     box-shadow:none;
+
 }
 .btn-small {
     font-size: 20px;
 }
 .btn:hover, .btn:focus, .btn:active, .btn.active, .btn.disabled, .btn[disabled] {
-    background: #bf004d;
+    background: #718f00;
     color:#ffffff;
+}
+a, a:hover, a:focus {
+    color: #0099ff;
+}
+legend{
+    color:#0099ff;
+    text-transform: uppercase;
+    text-align: center;
+}
+.navbar-inverse .navbar-inner{
+    background-color: #ff0066;
+    background-image: none;
+    background: #ff0066;
+
+}
+.navbar-inner{
+    min-height: 10px;
+}
+
+form{
+
+    margin:0 auto;
+}
+.form-horizontal .control-group{
+    margin:0 auto;
+}
+.navbar .btn-navbar{
+    /*visibility: hidden;*/
+}
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    border-radius: 8px 8px 8px 8px;
+    font-size: 20px;
 }
