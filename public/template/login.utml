@@ -16,12 +16,18 @@
         <% } %>
       </div>
     </div>
-    <div class="control-group">
-      <div class="controls">
-        <button type="submit" class="btn btn-primary" disabled="disabled">Login</button>
-      </div>
-    </div>
+
   </form>
+  <div align="center" class="questions">
+      <br>
   <p><a class="add-continue" href="/main/register">New user?</a></p>
   <p><a class="add-continue" href="/main/remote">Account on another server?</a></p>
+      <br>
+  </div>
+
+    <div class="control-group" align="center">
+        <div class="controls">
+            <button type="submit" class="btn btn-primary" disabled="disabled">Login</button>
+        </div>
+    </div>
 </div>

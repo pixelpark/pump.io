@@ -42,24 +42,34 @@ legend {
     font-size: 34px;
     font-weight: bold;
 }
-
 .navbar-inverse .navbar-inner {
-    background-color: #ff0066;
-    background-image: none;
-    background: #ff0066;
-
+    background-image: url("../img/grain_grey.jpg");
+    border-color: rgb(237, 237, 237);
 }
 
 .navbar-inner {
-    min-height: 10px;
+    min-height: 20px;
+    background-image: url("../img/grain_grey.jpg");
+
 }
 
 .navbar-inverse .nav > li > a, .navbar-inverse .nav > li > a:focus, .navbar-inverse .nav > li > a:hover, .navbar-inverse .nav-collapse .nav > li > a {
     text-shadow: none;
-    color: white;
+    color: black;
+    line-height: 14px;
+    background-image: url("../img/grain_grey.jpg");
+    text-transform: uppercase;
 }
-.navbar-inverse .nav-collapse .nav > li > a, .navbar-inverse .nav-collapse .dropdown-menu a {
+.navbar-inverse .nav > li > a#register{
+    color: #7f7f7f;
+}
 
+.navbar-inverse .nav-collapse .nav > li > a, .navbar-inverse .nav-collapse {
+    background-image: url("../img/grain_grey.jpg");
+}
+.navbar-fixed-top .navbar-inner {
+    background-image: url("../img/grain_grey.jpg");
+    padding: 0px;
 }
 
 form {
@@ -87,7 +97,12 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
     height: 39px;
     margin-bottom: 10px;
 }
+footer{
+    color: #7f7f7f;
+    text-align: center;
+}
 
-.nav > li > a {
-    display: inline;
+.add-continue{
+    text-transform: uppercase;
+    color: #7f7f7f;
 }
