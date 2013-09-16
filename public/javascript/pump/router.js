@@ -24,6 +24,7 @@
             "":                       "home",    
             "allusers":               "allusers",   
             ":nickname":              "profile",   
+            ":nickname/video":        "videostream",  
             ":nickname/favorites":    "favorites",  
             ":nickname/following":    "following",  
             ":nickname/followers":    "followers",  
@@ -203,6 +204,32 @@
                     return;
                 }
                 Pump.body.setContent({contentView: Pump.UserPageContent,
+                                      userContentView: Pump.ActivitiesUserContent,
+                                      title: profile.get("displayName"),
+                                      data: { major: major,
+                                              minor: minor,
+                                              headless: true,
+                                              profile: profile }},
+                                     function() {
+                                         Pump.body.endLoad();
+                                     });
+            });
+        },
+
+        videostream: function(nickname) {
+            var router = this,
+                user = Pump.User.unique({nickname: nickname}),
+                major = user.majorStream,
+                minor = user.minorStream;
+
+            Pump.body.startLoad();
+            Pump.fetchObjects([user, major, minor], function(err, objs) {
+                var profile = user.profile;
+                if (err) {
+                    Pump.error(err);
+                    return;
+                }
+                Pump.body.setContent({contentView: Pump.UserPageVideoContent,
                                       userContentView: Pump.ActivitiesUserContent,
                                       title: profile.get("displayName"),
                                       data: { major: major,

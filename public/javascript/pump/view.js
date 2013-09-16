@@ -1177,6 +1177,78 @@
         }
     });
 
+    Pump.UserPageVideoContent = Pump.ContentView.extend({
+        templateName: 'user-video',
+        parts: ["profile-block",
+                "profile-nav",
+                "user-content-activities",
+                "major-stream",
+                "minor-stream",
+                "major-activity",
+                "minor-activity",
+                "responses",
+                "reply",
+                "replies",
+                "profile-responses",
+                "activity-object-list",
+                "activity-object-collection"
+               ],
+        addMajorActivity: function(act) {
+            var view = this,
+                profile = this.options.data.profile;
+
+            if (!profile || act.actor.id != profile.get("id")) {
+                return;
+            }
+
+            view.userContent.majorStreamView.showAdded(act);
+        },
+        addMinorActivity: function(act) {
+            var view = this,
+                profile = this.options.data.profile;
+
+            if (!profile || act.actor.id != profile.get("id")) {
+                return;
+            }
+
+            view.userContent.minorStreamView.showAdded(act);
+        },
+        getStreams: function() {
+            var view = this,
+                uc,
+                streams = {};
+            if (view.userContent) {
+                uc = view.userContent;
+                if (uc.majorStreamView && uc.majorStreamView.model) {
+                    streams.major = uc.majorStreamView.model;
+                }
+                if (uc.minorStreamView && uc.minorStreamView.model) {
+                    streams.minor = uc.minorStreamView.model;
+                }
+            }
+            return streams;
+        },
+        subs: {
+            "#profile-block": {
+
+                attr: "profileBlock",
+                subView: "ProfileBlock",
+                subOptions: {
+                    model: "profile"
+                }
+            },
+            "#user-content-activities": {
+                attr: "userContent",
+                subView: "ActivitiesUserContent",
+                subOptions: {
+                    data: ["major", "minor", "headless"]
+                }
+            }
+        }
+    });
+
+
+
     Pump.ActivitiesUserContent = Pump.TemplateView.extend({
         templateName: 'user-content-activities',
         parts: ["major-stream",

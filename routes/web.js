@@ -100,6 +100,7 @@ var addRoutes = function(app) {
     }
 
     app.get("/:nickname", app.session, principal, addMessages, reqUser, showStream);
+    app.get("/:nickname/video", app.session, principal, addMessages, reqUser, showVideoStream);
     app.get("/:nickname/favorites", app.session, principal, addMessages, reqUser, showFavorites);
     app.get("/:nickname/followers", app.session, principal, addMessages, reqUser, showFollowers);
     app.get("/:nickname/following", app.session, principal, addMessages, reqUser, showFollowing);
@@ -347,6 +348,35 @@ var showActivity = function(req, res, next) {
                                            principal: principal,
                                            activity: activity});
     }
+};
+
+var showVideoStream = function(req, res, next) {
+
+    Step(
+        function() {
+            streams.userMajorStream({user: req.user}, req.principal, this.parallel());
+            streams.userMinorStream({user: req.user}, req.principal, this.parallel());
+            addFollowed(req.principal, [req.user.profile], this.parallel());
+            req.user.profile.expandFeeds(this.parallel());
+        },
+        function(err, major, minor) {
+            if (err) {
+                next(err);
+            } else {
+                res.render("user-video", {page: {title: req.user.profile.displayName, url: req.originalUrl},
+                                    major: major,
+                                    minor: minor,
+                                    profile: req.user.profile,
+                                    data: {
+                                        major: major,
+                                        minor: minor,
+                                        profile: req.user.profile,
+                                        headless: true
+                                    }
+                                   });
+            }
+        }
+    );
 };
 
 var showStream = function(req, res, next) {

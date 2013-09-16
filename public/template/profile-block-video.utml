@@ -5,7 +5,8 @@
     <% } else { %>
     <img src="/images/default.png" width="128" height="128" class="img-rounded media-object" />
     <% } %>
-    <a href="/<%= profile.preferredUsername %>/video">video</a>
+<iframe src="http://ec2-184-72-175-98.compute-1.amazonaws.com:8080/videoPage.html?me=<%= principal.displayName %>" height="300" width="600"></iframe>
+( <%= profile.preferredUsername %> is called by <%= principal.displayName %> )
   </span>
   <div class="media-body">
   <div class="pull-right">
