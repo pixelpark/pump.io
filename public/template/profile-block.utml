@@ -5,7 +5,7 @@
     <% } else { %>
     <img src="/images/default.png" width="128" height="128" class="img-rounded media-object" />
     <% } %>
-    <a href="/<%= profile.preferredUsername %>/video">video</a>
+      <a class="btn btn-primary"  href="/<%= profile.preferredUsername %>/video"><i class="icon-white icon-facetime-video"></i> video-chat</a>
   </span>
   <div class="media-body">
   <div class="pull-right">
