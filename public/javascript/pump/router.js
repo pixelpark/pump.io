@@ -148,6 +148,15 @@
             });
         },
 
+        "allusers": function() {
+                Pump.body.setContent({contentView: Pump.allusersContent,
+                                      title: "All users"},
+                                     function() {
+                                         Pump.body.endLoad();
+                                     });
+            }
+        },
+
         "home": function() {
             var pair = Pump.getUserCred();
 

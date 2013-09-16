@@ -68,6 +68,7 @@ var databank = require("databank"),
 var addRoutes = function(app) {
 
     app.get("/", app.session, principal, addMessages, showMain);
+    app.get("/allusers", app.session, principal, addMessages, showAllusers);
 
     app.get("/main/register", app.session, principal, showRegister);
     app.post("/main/register", app.session, principal, clientAuth, reqGenerator, createUser);
@@ -136,6 +137,27 @@ var showMain = function(req, res, next) {
         res.render("main", {page: {title: "Welcome", url: req.originalUrl}});
     }
 };
+
+var showAllusers = function(req, res, next) {
+   
+    var redis = require("redis"),
+    client = redis.createClient();
+
+    var users = [];
+    client.keys("user:*", function (err, replies) {
+        if (err) {  return console.error("error response - " + err); }
+        replies.forEach(function (reply, i) {
+        users.push(reply.split(':')[1])
+    });
+    // res.send(JSON.stringify(users));
+
+    req.log.info({msg: "Showing All Users"});
+    res.render("allusers", {page: {title: "allusers", url: req.originalUrl},
+                            users: users});
+
+  });
+};
+
 
 var showInbox = function(req, res, next) {
 

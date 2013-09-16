@@ -717,6 +717,10 @@
         }
     });
 
+    Pump.AllusersContent = Pump.ContentView.extend({
+        templateName: 'allusers'
+    });
+
     Pump.MainContent = Pump.ContentView.extend({
         templateName: 'main'
     });
