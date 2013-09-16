@@ -512,6 +512,7 @@ if (!window.Pump) {
         var $content = $("#content"),
             selectorToView = {
                 "#main": {View: Pump.MainContent},
+                "#allusers": {View: Pump.AllusersContent},
                 "#loginpage": {View: Pump.LoginContent},
                 "#registerpage": {View: Pump.RegisterContent},
                 "#recoverpage": {View: Pump.RecoverContent},
