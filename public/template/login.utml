@@ -17,6 +17,11 @@
       </div>
     </div>
 
+      <div class="control-group" align="center">
+          <div class="controls">
+              <button type="submit" class="btn btn-primary">_Login</button>
+          </div>
+      </div>
   </form>
   <div align="center" class="questions">
       <br>
@@ -25,9 +30,5 @@
       <br>
   </div>
 
-    <div class="control-group" align="center">
-        <div class="controls">
-            <button type="submit" class="btn btn-primary" disabled="disabled">Login</button>
-        </div>
-    </div>
+
 </div>
