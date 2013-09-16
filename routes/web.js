@@ -139,26 +139,21 @@ var showMain = function(req, res, next) {
 };
 
 var showAllusers = function(req, res, next) {
-
-var redis = require("redis"),
+   
+    var redis = require("redis"),
     client = redis.createClient();
 
-      var users = [];
-  client.keys("user:*", function (err, replies) {
-      if (err) {  return console.error("error response - " + err); }
-
-      console.log(replies.length + " replies:");
-      replies.forEach(function (reply, i) {
-          users.push(reply.split(':')[1])
-          console.log("    " + i + ": " + reply);
-          console.log(users);
-      });
-      // res.send(JSON.stringify(users));
+    var users = [];
+    client.keys("user:*", function (err, replies) {
+        if (err) {  return console.error("error response - " + err); }
+        replies.forEach(function (reply, i) {
+        users.push(reply.split(':')[1])
+    });
+    // res.send(JSON.stringify(users));
 
     req.log.info({msg: "Showing All Users"});
     res.render("allusers", {page: {title: "allusers", url: req.originalUrl},
-                            users: users
-                           });
+                            users: users});
 
   });
 };
