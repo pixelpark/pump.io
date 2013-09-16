@@ -1,12 +1,14 @@
-<div id="registerpage">
-  <form id="registration" class="form-horizontal">
+<div id="registerpage" align="center">
+  <form id="registration" class="form">
     <legend>Register for a new account</legend>
     <p class="text-error" id="error"></p>
     <div class="control-group" id="nickname-group">
       <label class="control-label" for="nickname">Nickname</label>
       <div class="controls">
         <input type="text" id="nickname" name="nickname" size="16" placeholder="******">
-        <span class="help-inline">1-64 characters, only letters and numbers and . and - and _</span>
+
+          <p>1-64 characters, only letters and numbers and . and - and _</p>
+
       </div>
     </div>
     <% if (config.requireEmail) { %>
@@ -22,7 +24,7 @@
       <label class="control-label" for="password">Password</label>
       <div class="controls">
         <input type="password" id="password" name="password" size="16" placeholder="******">
-        <span class="help-inline">Eight characters, mixed letters and numbers, not stupid</span>
+        <p>Eight characters, mixed letters and numbers, not stupid</p>
       </div>
     </div>
     <div class="control-group" id="repeat-group">
@@ -31,12 +33,17 @@
         <input type="password" id="repeat" name="repeat" size="16" placeholder="******">
       </div>
     </div>
+      <div align="center" class="questions">
+          <br>
+          <p><a href="/main/login">Already have an account?</a></p>
+          <!--<p><a href="/main/remote">Account on another server?</a></p>-->
+          <br>
+      </div>
     <div class="control-group">
       <div class="controls">
         <button type="submit" class="btn btn-primary">Register</button>
       </div>
     </div>
   </form>
-  <p><a href="/main/login">Already have an account?</a></p>
-  <p><a href="/main/remote">Account on another server?</a></p>
+
 </div>

@@ -1,8 +1,8 @@
 body {
     background-image: url("../img/grain_white.jpg");
     /*background-color: #d9d9d9;*/
-    line-height: 10px;
-    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 12px;
+    font-family:  arial, sans-serif;
     text-shadow: none;
 }
 .hero-unit {
@@ -18,16 +18,49 @@ body {
     font-weight: bold;
     border: none;
     box-shadow: none;
-
+}
+.btn .navbar{
+    text-transform: uppercase;
+    padding: 14px 22px;
+    background: #97bf00;
+    text-shadow: none;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    box-shadow: none;
+}
+.badge{
+font-size: 18px;
+line-height: 14px;
+text-shadow: none;
+white-space: nowrap;
+vertical-align: baseline;
+}
+.navbar .badge-important{
+    background-color: #0073bf;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .btn-small {
-    font-size: 30px;
+    padding: 14px 22px;
+
+    background-color: #0099ff;
+
+}
+.btn-group > .btn-small {
+    font-size: 20px;
+}
+.btn-group > .btn:hover, .btn-group > .btn:focus, .btn-group.open .btn-success.dropdown-toggle {
+    background-color: #0073bf;
 }
 
 .btn:hover, .btn:focus, .btn:active, .btn.active, .btn.disabled, .btn[disabled] {
     background: #718f00;
     color: #ffffff;
+}
+.btn-group > .btn:first-child {
+
 }
 
 a, a:hover, a:focus {
@@ -60,9 +93,6 @@ legend {
     background-image: url("../img/grain_grey.jpg");
     text-transform: uppercase;
 }
-.navbar-inverse .nav > li > a#register{
-    color: #7f7f7f;
-}
 
 .navbar-inverse .nav-collapse .nav > li > a, .navbar-inverse .nav-collapse {
     background-image: url("../img/grain_grey.jpg");
@@ -73,11 +103,10 @@ legend {
 }
 
 form {
-
     margin: 0 auto;
 }
 
-.form-horizontal .control-label {
+.control-label {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 20px;
@@ -105,4 +134,12 @@ footer{
 .add-continue{
     text-transform: uppercase;
     color: #7f7f7f;
+}
+.caret{
+    border-top: 20px solid rgb(0, 0, 0);
+    border-right: 20px solid transparent;
+    border-left: 20px solid transparent;
+}
+.navbar-inverse .nav > li > a, .navbar-inverse .nav > li > a:focus, .navbar-inverse .nav > li > a:hover{
+    font-size: 20px;
 }

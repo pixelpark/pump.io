@@ -1,5 +1,5 @@
-<div id="loginpage">
-  <form id="login" class="form-horizontal">
+<div id="loginpage" align="center">
+  <form id="login" class="form">
     <legend>Login to your account</legend>
     <div class="control-group" id="nickname-group">
       <label class="control-label" for="nickname">Nickname</label>
@@ -17,18 +17,20 @@
       </div>
     </div>
 
+      <div align="center" class="questions">
+          <br>
+          <p><a class="add-continue" href="/main/register">New user?</a></p>
+          <p><a class="add-continue" href="/main/remote">Account on another server?</a></p>
+          <br>
+      </div>
+
       <div class="control-group" align="center">
           <div class="controls">
-              <button type="submit" class="btn btn-primary">_Login</button>
+              <button type="submit" class="btn btn-primary">Login</button>
           </div>
       </div>
   </form>
-  <div align="center" class="questions">
-      <br>
-  <p><a class="add-continue" href="/main/register">New user?</a></p>
-  <p><a class="add-continue" href="/main/remote">Account on another server?</a></p>
-      <br>
-  </div>
+
 
 
 </div>
