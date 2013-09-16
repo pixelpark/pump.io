@@ -69,6 +69,7 @@ var addRoutes = function(app) {
 
     app.get("/", app.session, principal, addMessages, showMain);
     app.get("/allusers", app.session, principal, addMessages, showAllusers);
+    app.get("/video", app.session, principal, addMessages, showVideo);
 
     app.get("/main/register", app.session, principal, showRegister);
     app.post("/main/register", app.session, principal, clientAuth, reqGenerator, createUser);
@@ -138,6 +139,11 @@ var showMain = function(req, res, next) {
     }
 };
 
+var showVideo = function(req, res, next) {
+        req.log.info({msg: "Showing video page"});
+        res.render("video", {page: {title: "Video", url: req.originalUrl}});
+};
+
 var showAllusers = function(req, res, next) {
    
     var redis = require("redis"),
@@ -152,8 +158,12 @@ var showAllusers = function(req, res, next) {
     // res.send(JSON.stringify(users));
 
     req.log.info({msg: "Showing All Users"});
-    res.render("allusers", {page: {title: "allusers", url: req.originalUrl},
-                            users: users});
+    res.render("allusers", {page: {title: "allusers", url: req.originalUrl}
+    //                        ,users: users,
+    //                        data: {
+    //                            users: users
+    //                        }
+                             });
 
   });
 };

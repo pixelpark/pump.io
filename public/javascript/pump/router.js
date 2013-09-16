@@ -22,6 +22,7 @@
 
         routes: {
             "":                       "home",    
+            "allusers":               "allusers",   
             ":nickname":              "profile",   
             ":nickname/favorites":    "favorites",  
             ":nickname/following":    "following",  
@@ -148,15 +149,14 @@
             });
         },
 
+
         "allusers": function() {
-                Pump.body.setContent({contentView: Pump.allusersContent,
-                                      title: "All users"},
+                        Pump.body.setContent({contentView: Pump.AllusersContent,
+                                      title: "All Users"},
                                      function() {
                                          Pump.body.endLoad();
                                      });
-            }
         },
-
         "home": function() {
             var pair = Pump.getUserCred();
 
