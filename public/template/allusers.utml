@@ -1,0 +1,17 @@
+<div id="main">
+  <div class="hero-unit">
+    <div class="row">
+      <div class="span6">
+        <h1>&nbsp;</h1>
+
+        <p>Find your friends on this site!
+	</p>
+
+        <% for(var i = 0; i < users.length; i++) { %>
+          <li><a href="<%= users[i] %>"><%= users[i] %></a></li>
+        <% } %>
+
+      </div>
+    </div>
+  </div>
+</div>
