@@ -1,4 +1,4 @@
-<div class="user video-activities">
+<div class="user user-activities">
   <div class="row">
     <div class="span12">
       <%= partial("profile-block-video") %>
@@ -7,6 +7,11 @@
   <div class="row">
     <div class="span12">
       <%= partial("profile-nav") %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12" id="user-content">
+      <%= partial("user-content-activities") %>
     </div>
   </div>
 </div>

@@ -1179,7 +1179,7 @@
 
     Pump.UserPageVideoContent = Pump.ContentView.extend({
         templateName: 'user-video',
-        parts: ["profile-block",
+        parts: ["profile-block-video",
                 "profile-nav",
                 "user-content-activities",
                 "major-stream",
@@ -1229,7 +1229,7 @@
             return streams;
         },
         subs: {
-            "#profile-block": {
+            "#profile-block-video": {
 
                 attr: "profileBlock",
                 subView: "ProfileBlock",

@@ -6,24 +6,21 @@
 
         <p>Find your friends on this site!
 	</p>
-
+<div id="userlist"><ul>
           <li><a href="dirkk0">dirkk0</a></li>
-        
           <li><a href="testuser33">testuser33</a></li>
-        
           <li><a href="dirkk">dirkk</a></li>
-<div id="userlist">loading ... </div>
+</ul></div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-$.getJSON('http://ec2-184-72-175-98.compute-1.amazonaws.com:8080/list.json', function(users)
+$.getJSON('http://ec2-184-72-175-98.compute-1.amazonaws.com:8080/users.json', function(users)
   {
-    $('#userlist').empty();
+    $('#userlist ul').empty();
     console.log(users);
     for(var i in users) {
-      item = users[i];
-          $("<a/>", { id: i, text: item }).appendTo("#userlist");
+      $("#userlist ul").append('<li><a href="/'+users[i]+'">'+users[i]+'</a></li>');
     }
   });
 });

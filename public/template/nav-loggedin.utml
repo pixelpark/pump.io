@@ -23,6 +23,7 @@
       </a>
       <ul class="dropdown-menu" role="menu" aria-labelledby="profile-dropdown">
         <li><a tabindex="-1" href="/<%- principalUser.nickname %>">Activity</a></li>
+        <li><a tabindex="-1" href="/allusers">All Users</a></li>
         <li><a tabindex="-1" href="/<%- principalUser.nickname %>/favorites">Favorites</a></li>
         <li><a tabindex="-1" href="/<%- principalUser.nickname %>/followers">Followers</a></li>
         <li><a tabindex="-1" href="/<%- principalUser.nickname %>/following">Following</a></li>

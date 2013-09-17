@@ -217,18 +217,20 @@
         },
 
         videostream: function(nickname) {
-            var router = this,
+           var router = this,
                 user = Pump.User.unique({nickname: nickname}),
                 major = user.majorStream,
                 minor = user.minorStream;
 
             Pump.body.startLoad();
+console.log('777')
             Pump.fetchObjects([user, major, minor], function(err, objs) {
                 var profile = user.profile;
                 if (err) {
                     Pump.error(err);
                     return;
                 }
+console.log('888')
                 Pump.body.setContent({contentView: Pump.UserPageVideoContent,
                                       userContentView: Pump.ActivitiesUserContent,
                                       title: profile.get("displayName"),
