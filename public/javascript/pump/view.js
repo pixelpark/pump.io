@@ -1179,7 +1179,7 @@
 
     Pump.UserPageVideoContent = Pump.ContentView.extend({
         templateName: 'user-video',
-        parts: ["profile-block-video",
+        parts: ["profile-block",
                 "profile-nav",
                 "user-content-activities",
                 "major-stream",
@@ -1229,10 +1229,10 @@
             return streams;
         },
         subs: {
-            "#profile-block-video": {
+            "#profile-block": {
 
                 attr: "profileBlock",
-                subView: "ProfileBlock",
+                subView: "ProfileBlockVideo",
                 subOptions: {
                     model: "profile"
                 }
@@ -1968,10 +1968,23 @@
         modelName: 'profile',
         parts: ["profile-responses"],
         initialize: function(options) {
+console.log("Initializing profile-block #" + this.cid)
             Pump.debug("Initializing profile-block #" + this.cid);
             Pump.PersonView.prototype.initialize.apply(this);
         }
     });
+
+    Pump.ProfileBlockVideo = Pump.PersonView.extend({
+        templateName: 'profile-block-video',
+        modelName: 'profile',
+        parts: ["profile-responses"],
+        initialize: function(options) {
+console.log("Initializing profile-block-video #" + this.cid)
+            Pump.debug("Initializing profile-block #" + this.cid);
+            Pump.PersonView.prototype.initialize.apply(this);
+        }
+    });
+
 
     Pump.FavoritesContent = Pump.ContentView.extend({
         templateName: 'favorites',
@@ -3184,17 +3197,18 @@
 
             // We try and only update the parts that have changed
 
-            if (oldContent &&
+	    // XXX dkr: dirty hack to prevent this: 0==1
+            if (oldContent && 0==1 &&
                 options.userContentView &&
                 oldContent.profileBlock &&
                 oldContent.profileBlock.model.get("id") == profile.get("id")) {
 
                 if (body.content.profileBlock) {
-                    Pump.debug("Removing profile block #" + body.content.profileBlock.cid + " from " + View.prototype.templateName);
-                    body.content.profileBlock.remove();
+                    Pump.debug("---Removing profile block #" + body.content.profileBlock.cid + " from " + View.prototype.templateName);
+                     body.content.profileBlock.remove();
                 }
 
-                Pump.debug("Connecting profile block #" + oldContent.profileBlock.cid + " to " + View.prototype.templateName);
+                Pump.debug("---Connecting profile block #" + oldContent.profileBlock.cid + " to " + View.prototype.templateName);
 
                 body.content.profileBlock = oldContent.profileBlock;
 
