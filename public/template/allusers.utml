@@ -15,7 +15,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-$.getJSON('http://ec2-184-72-175-98.compute-1.amazonaws.com:8080/users.json', function(users)
+$.getJSON('http://ec2-184-72-175-98.compute-1.amazonaws.com:8070/users.json', function(users)
   {
     $('#userlist ul').empty();
     console.log(users);
