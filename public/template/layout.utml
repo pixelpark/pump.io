@@ -38,9 +38,9 @@
   </head>
 
   <body>
-
     <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
+        <div class="topColorBar"></div><div class="logo"></div>
+        <div class="navbar-inner">
           <% if (page.nologin) { %>
           <%= partial('nav-nologin') %>
           <% } else if (principalUser) { %>
