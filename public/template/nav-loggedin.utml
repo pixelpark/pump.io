@@ -1,25 +1,25 @@
 <div class="container">
 
-  <div class="btn-group">
+
     <button type="button" class="btn btn-small primary" id="post-note-button" title="Post a note">
-      <span class="hidden-phone">Note </span><i class="icon-white icon-pencil"></i>
+      <span>Note </span><i class="icon-white icon-pencil"></i>
     </button>
     <% if (config.canUpload) { %>
     <button type="button" class="btn btn-small primary" id="post-picture-button" title="Post a picture">
-      <span class="hidden-phone">Picture </span><i class="icon-white icon-picture"></i>
+      <span>Picture </span><i class="icon-white icon-picture"></i>
     </button>
     <% } %>
-  </div>
+
 
   <ul class="nav pull-right">
     <li id="fat-menu" class="dropdown">
-      <a href="#" id="profile-dropdown" role="button" class="dropdown-toggle" data-toggle="dropdown"> 
+      <a href="#" id="profile-dropdown" role="button" class="dropdown-toggle" data-toggle="dropdown">
         <% if (_(principal).has("image")) { %>
         <img class="pull-left img-rounded" src="<%- principal.image.url %>" width="24" height="24" class="img-rounded" />
         <% } else { %>
         <img class="pull-left img-rounded" src="/images/default.png" width="24" height="24" class="img-rounded" />
         <% } %>
-        &nbsp;<span class="hidden-phone"><%- principal.displayName %> </span><b class="caret"></b>
+        &nbsp;<div class="pull-left displayName"><%- principal.displayName %> </div><br/><div class="pull-right dropdownImg"></div>
       </a>
       <ul class="dropdown-menu" role="menu" aria-labelledby="profile-dropdown">
         <li><a tabindex="-1" href="/<%- principalUser.nickname %>">Activity</a></li>
@@ -37,9 +37,62 @@
     </li>
   </ul>
 
-  <div class="pull-right">
-    <%= partial("messages", {messages: messages}) %>
-    <%= partial("notifications", {notifications: notifications}) %>
-  </div>
+    <a href="/main/messages">
+    <div class="row messageContainer">
 
+        <div class="pull-left">
+
+            <!--
+            <%= partial("messages", {messages: messages}) %>
+            <%= partial("notifications", {notifications: notifications}) %>
+            -->
+
+            <% messages.items = ['1','2'] %>
+            <!-- <%- messages.items.length %> -->
+
+            <% if ( messages.items.length > 0){ %>
+
+                <div class="messageGroup" style="float:right">
+
+                <% for( var i=0; i < messages.items.length; i++ ) { %>
+            
+                    <div class="message" style="float:right"></div>
+            
+                <% } %>
+
+                </div>
+
+            <% } %>
+        </div>
+        <div class="pull-right textContent">
+            <% if ( messages.items.length == 0){ %>
+                You have 0 new messages.
+            <% } else if (messages.items.length == 1){ %>
+                You have 1 new message.
+            <% } else { %>
+                You have <%- messages.items.length %> new messages
+            <% } %>
+        </div>
+    </div>
+
+    <div class="row messageContainer">
+        <div class="pull-left textContent">
+
+            <% notifications.items = ['1','2'] %>
+            <!-- <%- notifications.items.length %> -->
+
+            <% if ( notifications.items.length > 0){ %>
+                
+                <div class="messageGroup" style="float:right">
+                    <div style="float:right">You have new notification(s)</div>
+                    <div style="float:right" class="notification"></div>
+                    
+                    
+                </div>
+                
+            <% } %>
+        </div>
+    </div>
+    </a>
 </div>
+
